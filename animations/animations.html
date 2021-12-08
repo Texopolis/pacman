@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+body{
+    text-align: center;
+}
+
+.pacman{
+    background-color: yellow;
+    /* border: 1px solid black; */
+    border-radius:50%;
+    width: 15vh;
+    height: 15vh;
+    padding: 0;
+    margin: 0;
+    clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 25%, 50% 50%, 100% 75%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);    
+    animation: chomp .7s infinite;
+}
+
+@keyframes chomp {
+    
+    1% {clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 25%, 50% 50%, 100% 75%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);}
+    25%{clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 38%, 75% 50%, 100% 62%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);}
+    50%{clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 50%, 100% 50%, 100% 50%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);}
+    75%{clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 38%, 75% 50%, 100% 62%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);} 
+    100{clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 25%, 50% 50%, 100% 75%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);}
+
+}
+        
+
+
+/* @keyframes chomp {
+    
+    1% {clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 25%, 50% 50%, 100% 75%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);}
+    25%{clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 25%, 75% 50%, 100% 75%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);}
+    50%{clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 25%, 100% 50%, 100% 75%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);}
+    75%{clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 25%, 75% 50%, 100% 75%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);} 
+    100{clip-path:polygon(0% 50%, 0% 25%, 25% 0%, 50% 0%, 75% 0%, 100% 25%, 50% 50%, 100% 75%, 75% 100%, 50% 100%, 25% 100%, 0% 100%);}
+
+} */
+
+
+
+.ghost{
+    width: 15vh;
+    height: 15vh;
+    background-color: pink;
+    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 100%, 73% 90%, 50% 100%, 25% 90%, 0 100%, 0% 35%, 20% 10%);
+}
+.scared{
+    width: 15vh;
+    height: 15vh;
+    background-color: blue;clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 100%, 73% 90%, 50% 100%, 25% 90%, 0 100%, 0% 35%, 20% 10%);
+
+}
+
+
+</style>
+</head>
+<body>
+    <h1>animations</h1>
+    <div class="pacman"><p class="label">pacman</p></div>
+    <div class="ghost"><p class="label">ghost</p></div>
+    <div class="scared"><p class="label">scared</p></div>
+</body>
+</html>
