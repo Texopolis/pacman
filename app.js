@@ -4,6 +4,7 @@ const grid = document.querySelector('.grid')
 const scoreDisplay = document.getElementById('score')
 let squares = []
 let score = 0
+let winScore=200
 
 // 0 - pacdots
 // 1 - wall
@@ -258,9 +259,9 @@ function checkgameOver(){
 }
 
 function checkForWin(){
-    if (score>= 50){
+    if (score>= winScore){
         ghosts.forEach ( ghost => clearInterval(ghost.timerId))
-        scoreDisplay.textContent = 'You win'
+        scoreDisplay.textContent = 'YOU WIN'
         document.removeEventListener('keydown', control)
 
     }

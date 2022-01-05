@@ -4,6 +4,7 @@ const grid = document.querySelector('.grid')
 const scoreDisplay = document.getElementById('score')
 let squares = []
 let score = 0
+const winScore=200
 
 // 0 - pacdots
 // 1 - wall
@@ -175,7 +176,7 @@ class Ghost{
 }
 
 const ghosts = [
-    new Ghost('blinky', 348, 190),
+    new Ghost('blinky', 348, 290),
     new Ghost('pinky', 404, 250),
     new Ghost('inky', 351, 300),
     new Ghost('clyde', 407, 270)
@@ -242,29 +243,31 @@ function checkgameOver(){
 }
 
 function checkForWin(){
-    if (score>= 50){
+    if (score > winScore){
         ghosts.forEach ( ghost => clearInterval(ghost.timerId))
         document.removeEventListener('keydown', control)
-        scoreDisplay.textContent = 'You win'
+        scoreDisplay.textContent = 'YOU WIN'
     }
 }
 
 //reset game
-function reset(){
-    document.addEventListener('keydown', function(e) {
-        if (e.key==='Escape'){
-            score=0
-            createBoard()
-            squares[pacmanCurrentIndex].classList.remove('pacman-right', 'pacman-left')
-            pacmanCurrentIndex=pacmanStartIndex
-            squares[pacmanCurrentIndex].classList.add('pacman-right')
-            document.addEventListener('keydown', control)
-            ghosts.forEach(ghost => {
-                squares[ghost.currentIndex].classList.remove(ghost.className, 'ghost', 'scared-ghost')
-                ghost.currentIndex = ghost.startIndex
-                squares[ghost.currentIndex].classList.add(ghost.className, 'ghost')
-                // setInterval(ghost.timerId)
-            })
-            ghosts.forEach(ghost => moveGhost(ghost))
-        }})}
+// function reset(){
+//     document.addEventListener('keydown', function(e) {
+//         if (e.key==='Escape'){
+//             score=0
+//             createBoard()
+//             squares[pacmanCurrentIndex].classList.remove('pacman-right', 'pacman-left')
+//             pacmanCurrentIndex=pacmanStartIndex
+//             squares[pacmanCurrentIndex].classList.add('pacman-right')
+//             document.addEventListener('keydown', control)
+//             ghosts.forEach(ghost => {
+//                 squares[ghost.currentIndex].classList.remove(ghost.className, 'ghost', 'scared-ghost')
+//                 ghost.currentIndex = ghost.startIndex
+//                 squares[ghost.currentIndex].classList.add(ghost.className, 'ghost')
+//                 // setInterval(ghost.timerId)
+//             })
+//             ghosts.forEach(ghost => moveGhost(ghost))
+//         }})}
         
+
+      
